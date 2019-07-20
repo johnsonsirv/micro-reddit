@@ -17,6 +17,14 @@ RSpec.describe User, :type => :model do
 			
 			expect(u).to be_valid
 		end
-		
+		it "should have a unique email and username" do
+			u1 = User.new(email: "johnsonsirv@gmail.com", username: "johnsonsirv", password: "12345678")
+			u1.save
+			
+			u2 = User.new(email: "johnsonsirv@gmail.com", username: "johnsonsirv", password: "876543210")
+			
+			
+			expect(u2.save).to be(false)
+		end
 	end
 end
