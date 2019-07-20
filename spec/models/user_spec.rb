@@ -7,9 +7,16 @@ RSpec.describe User, :type => :model do
 			
 			expect(u).to_not be_valid
 		end
-		it "is valid with an email, username, password" do
-			u = User.new(email: "johnsonsirv@gmail.com", username: "johnsonsirv", password: "1234")
+		it "is not valid with email, username and password of less than 8 character or more than 16 character" do
+				u = User.new(email: "johnsonsirv@gmail.com", username: "johnsonsirv", password: "1234")
+			
+				expect(u).to_not be_valid
+		end
+		it "is valid with an email, username, password with more than 8 character and less than 16 character" do
+			u = User.new(email: "johnsonsirv@gmail.com", username: "johnsonsirv", password: "12345678")
+			
 			expect(u).to be_valid
 		end
+		
 	end
 end
