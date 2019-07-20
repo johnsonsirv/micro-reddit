@@ -26,5 +26,9 @@ RSpec.describe User, type: :model do
 			
 			expect(u2.save).to be(false)
 		end
+		it "has many posts" do
+			assoc = User.reflect_on_association(:posts)
+			expect(assoc.macro).to eq :has_many
+		end
 	end
 end

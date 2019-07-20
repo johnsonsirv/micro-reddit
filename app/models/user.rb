@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+	has_many :posts
+	
 	validates :email, :username, :password, presence: true
 	validates :username, :password, length: {in: 8..16}
 	validates :email, :username, uniqueness: true
