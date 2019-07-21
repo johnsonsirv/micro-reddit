@@ -1,24 +1,27 @@
-# README
+## Micro-reddit (Building and Testing Models)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Let’s build ``Reddit``. Well, maybe a very junior version of it called ``micro-reddit``. Tthis project involves building and testing of the data structures necessary to support link submissions and commenting.
 
-Things you may want to cover:
+### Technology:
 
-* Ruby version
+* Ruby 2.4.0
+* Rails 5.2.3
+* RSpec (test suite)
+* SQLite
 
-* System dependencies
 
-* Configuration
+###### Database initialization
+in your terminal ```rake db:migrate db:test:prepare```
 
-* Database creation
+###### How to run the test suite for models
 
-* Database initialization
+in your terminal run ``` rspec spec/model```
 
-* How to run the test suite
+###### Deployment
+You can interact with this app in your terminal
 
-* Services (job queues, cache servers, search engines, etc.)
+Run ```rails console```
 
-* Deployment instructions
+Enable the Hirb gem prettifier in your rails console
 
-* ...
+type ```Hirb.enable```
