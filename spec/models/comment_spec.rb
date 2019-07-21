@@ -18,5 +18,13 @@ RSpec.describe Comment, type: :model do
 			
 			expect(comment_1).to be_valid
 		end
+		it "belongs to a user" do
+			assoc = Comment.reflect_on_association(:user)
+			expect(assoc.macro).to eq :belongs_to
+		end
+		it "belongs to a post" do
+			assoc = Comment.reflect_on_association(:post)
+			expect(assoc.macro).to eq :belongs_to
+		end
 	end
 end
